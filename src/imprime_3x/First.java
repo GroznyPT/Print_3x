@@ -6,6 +6,7 @@
 package imprime_3x;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
@@ -36,19 +37,22 @@ public class First extends javax.swing.JFrame {
         jLN1 = new javax.swing.JLabel();
         jLN2 = new javax.swing.JLabel();
         jLN3 = new javax.swing.JLabel();
-        jLN4 = new javax.swing.JLabel();
         jNof = new javax.swing.JTextField();
         jModel = new javax.swing.JTextField();
-        jN1 = new javax.swing.JTextField();
-        jN2 = new javax.swing.JTextField();
-        jN3 = new javax.swing.JTextField();
-        jN4 = new javax.swing.JTextField();
+        jqnt = new javax.swing.JTextField();
+        jtam = new javax.swing.JTextField();
+        jnumeracao = new javax.swing.JTextField();
         jNLote = new javax.swing.JTextField();
         jLote = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Agency FB", 1, 10)); // NOI18N
 
+        jPrint.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jPrint.setText("IMPRIMIR");
         jPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,101 +60,151 @@ public class First extends javax.swing.JFrame {
             }
         });
 
+        JOF.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         JOF.setText("O.F.");
 
+        JLModel.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         JLModel.setText("MODELO");
 
-        jLN1.setText("Nº");
+        jLN1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLN1.setText("QNT.");
 
-        jLN2.setText("Nº");
+        jLN2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLN2.setText("TAM.");
 
-        jLN3.setText("Nº");
+        jLN3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLN3.setText("NUMERAÇÃO");
 
-        jLN4.setText("Nº");
+        jNof.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
 
+        jModel.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        jqnt.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        jtam.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        jnumeracao.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        jNLote.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        jLote.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLote.setText("Nº Lote");
+
+        jList.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Urgente", "COLECÇÃO" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("TIPO");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo-_Prancheta 1.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jLote)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(76, 76, 76)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLN2)
+                                .addComponent(jLN1)
+                                .addComponent(JLModel))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(28, 28, 28)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jqnt)
+                                        .addComponent(jtam, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jnumeracao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(JOF, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jNof, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLN3)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jNLote, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139))
+                        .addComponent(jNLote, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(JOF)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jNof, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLN2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jN2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLN3)
-                                            .addComponent(jLN4))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jN3)
-                                            .addComponent(jN4)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLN1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jN1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(JLModel)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(jPrint)))
-                        .addGap(108, 108, 108))))
+                        .addComponent(jLote)
+                        .addGap(229, 229, 229))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(133, 133, 133))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(158, 158, 158))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLote)
+                .addComponent(jLote, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jNLote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JOF)
-                    .addComponent(jNof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLModel)
-                    .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLN1)
-                    .addComponent(jN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLN2)
-                    .addComponent(jN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLN3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jN4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLN4))
-                .addGap(18, 18, 18)
-                .addComponent(jPrint)
-                .addGap(26, 26, 26))
+                .addComponent(jNLote, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JOF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jNof, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLN1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLN2)
+                                            .addComponent(jtam, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jqnt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLN3)
+                            .addComponent(jnumeracao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(JLModel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -162,37 +216,41 @@ public class First extends javax.swing.JFrame {
         String model = jModel.getText();
         String lote = jNLote.getText();
         String of = jNof.getText();
-        String n1 = jN1.getText();
-        String n2 = jN2.getText();
-        String n3 = jN3.getText();
-        String n4 = jN4.getText();
+        String qnt = jqnt.getText();
+        String tam = jtam.getText();
+        String numeracao = jnumeracao.getText();
+        String list = jList.getSelectedValue();
         
         
         
         GregorianCalendar calendar = new GregorianCalendar();
+        Calendar now = Calendar.getInstance();
+        
         SimpleDateFormat day = new SimpleDateFormat("dd/MM/YYYY");
+        int year = now.get(Calendar.YEAR);
         SimpleDateFormat time = new SimpleDateFormat ("HH:mm");
-        String newLine = System.getProperty("line.separator");
+      //  String newLine = System.getProperty("line.separator");
         
         
         String text =
-                   "******Identificador de LOTE*******\n;"
+                   "***Identificador de LOTE****\n;"
                 
-                    + "  Date:"+day.format(calendar.getTime())+ 
-                    "       Time:"+ time.format(calendar.getTime())+"\n;"+
+                    + " Date:"+day.format(calendar.getTime())+ 
+                    "  Time:"+ time.format(calendar.getTime())+"\n;"+
                 
-                    "----------------------------------\n;"
-                    + "    Numero de lote      "+lote+"         \n;"
-                    + "#################################\n;"
-                
-                    + "Ordem de Fabrico        "+of+"         \t;"
-                    + "Modelo                  "+model+"       \t;"
-                    + "Nº                      "+n1+"      \t;"
-                    + "Nº                      "+n2+"   \t;"
-                    + "Nº                      "+n3+"    \t;"
-                    + "Nº                      "+n4+"        \t;"
-                  
-                    + "---------------------------------\t;";
+                    "-----------------------------\n;"
+                    + "    Numero de lote      "+lote+"       \n;"
+                    + "#############################\n;"
+                    + "***********"+ list +"***********\n;"
+                    + "#############################\n;"
+                    + "Ordem de Fabrico          "+of+"       \t;"
+                    + "Modelo                    "+model+"     \t;"
+                    + "QNT.                      "+qnt+"    \t;"
+                    + "TAM.                      "+tam+"  \t;"
+                    + "NUMERAÇÃO                 "+numeracao+"  \t;"                            
+                    + "-----------------------------\t;"
+                    + "-----------DIELMAR-----------\t;"
+                    + "------------"+year+"-------------\t;";
         
         Printnow p = new Printnow();
         
@@ -243,15 +301,17 @@ public class First extends javax.swing.JFrame {
     private javax.swing.JLabel jLN1;
     private javax.swing.JLabel jLN2;
     private javax.swing.JLabel jLN3;
-    private javax.swing.JLabel jLN4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jList;
     private javax.swing.JLabel jLote;
     private javax.swing.JTextField jModel;
-    private javax.swing.JTextField jN1;
-    private javax.swing.JTextField jN2;
-    private javax.swing.JTextField jN3;
-    private javax.swing.JTextField jN4;
     private javax.swing.JTextField jNLote;
     private javax.swing.JTextField jNof;
     private javax.swing.JButton jPrint;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jnumeracao;
+    private javax.swing.JTextField jqnt;
+    private javax.swing.JTextField jtam;
     // End of variables declaration//GEN-END:variables
 }

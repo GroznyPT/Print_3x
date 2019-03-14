@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Imprime_3x">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Imprime_3x.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

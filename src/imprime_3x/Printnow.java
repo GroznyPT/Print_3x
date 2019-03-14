@@ -28,15 +28,15 @@ public class Printnow {
                 Graphics2D g2d = (Graphics2D) graphics;
                 g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
 
-                g2d.setFont(new Font("Monospaced",Font.BOLD,10));
+                g2d.setFont(new Font("Monospaced",Font.BOLD,15));
 
-                String[] billz = bill.split(";");
+                String[] text = bill.split(";");
                 int y = 15;
 
                 //one String for each line
 
-                for (int i = 0; i < billz.length; i++){
-                    graphics.drawString(billz[i], 5, y);
+                for (int i = 0; i < text.length; i++){
+                    graphics.drawString(text[i], 5, y);
                     y = y + 15;
                 }
                 if (pageIndex > 0){
