@@ -28,7 +28,7 @@ public class Printnow {
                 Graphics2D g2d = (Graphics2D) graphics;
                 g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
 
-                g2d.setFont(new Font("Monospaced",Font.BOLD,11));
+                g2d.setFont(new Font("Monospaced",Font.BOLD,12));
 
                 String[] text = bill.split(";");
                 int y = 15;
