@@ -93,7 +93,7 @@ public class First extends javax.swing.JFrame {
 
         jList.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Urgente", "COLECÇÃO" };
+            String[] strings = { "NORMAL", "ALFAIATARIA", "URGENTE", "COLECÇÃO" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -237,6 +237,9 @@ public class First extends javax.swing.JFrame {
         
         
         String text =
+                   "                             \n;"+   
+                   "                             \n;"+
+                   "                             \n;"+
                    "***Identificador de LOTE****\n;"
                 
                     + " Date:"+day.format(calendar.getTime())+ 
@@ -245,16 +248,17 @@ public class First extends javax.swing.JFrame {
                     "-----------------------------\n;"
                     + "    Numero de lote      "+lote+"       \n;"
                     + "#############################\n;"
-                    + "***********"+ list +"***********\n;"
+                    + "         "+ list +"         \n;"
                     + "#############################\n;"
-                    + "Ordem de Fabrico          "+of+"       \t;"
-                    + "Modelo                    "+model+"     \t;"
-                    + "QNT.                      "+qnt+"    \t;"
-                    + "TAM.                      "+tam+"  \t;"
-                    + "NUMERAÇÃO                 "+numeracao+"  \t;"                            
+                    + "OF                    "+of+"       \t;"
+                    + "Modelo                "+model+"     \t;"
+                    + "QNT.                  "+qnt+"    \t;"
+                    + "TAM.                  "+tam+"  \t;"
+                    + "NUMERAÇÃO             "+numeracao+"  \t;"                            
                     + "-----------------------------\t;"
                     + "-----------DIELMAR-----------\t;"
-                    + "------------"+year+"-------------\t;";
+                    + "------------"+year+"-------------\t;"
+                    + "-----------------------------\t;";
         
         Printnow p = new Printnow();
         

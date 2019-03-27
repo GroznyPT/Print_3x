@@ -280,9 +280,11 @@
               <Font name="Calibri" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="Urgente"/>
-                <StringItem index="1" value="COLEC&#xc7;&#xc3;O"/>
+              <StringArray count="4">
+                <StringItem index="0" value="NORMAL"/>
+                <StringItem index="1" value="ALFAIATARIA"/>
+                <StringItem index="2" value="URGENTE"/>
+                <StringItem index="3" value="COLEC&#xc7;&#xc3;O"/>
               </StringArray>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
