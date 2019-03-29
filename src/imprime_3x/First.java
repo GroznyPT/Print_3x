@@ -295,15 +295,15 @@ public class First extends javax.swing.JFrame {
                 + "############################\n;"
                 + "         " + list + "         \t;"
                 + "############################\n;"
-                + "OF                   " + of + "       \t;"
-                + "Modelo               " + model + "     \t;"
-                + "QNT.                 " + qnt + "    \t;"
-                + "TAM.                 " + tam + "  \t;"
-                + "NUMERAÇÃO            " + numeracao + "  \t;"
+                + "OF                 " + of + "       \t;"
+                + "Modelo             " + model + "     \t;"
+                + "QNT.               " + qnt + "    \t;"
+                + "TAM.               " + tam + "  \t;"
+                + "NUMERAÇÃO          " + numeracao + "  \t;"
                 + validaTotal(total)
                 + "----------------------------\t;"
-                + "-----------DIELMAR----------\t;"
-                + "------------" + year + "------------\t;"
+                + "----------DIELMAR----------\t;"
+                + "-----------" + year + "------------\t;"
                 + "----------------------------\t;";
 
         Printnow p = new Printnow();
